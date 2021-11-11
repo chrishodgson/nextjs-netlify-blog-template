@@ -1,13 +1,15 @@
 tags:
+  - slug: license
+    name: license
   - slug: document
     name: document
   - slug: mock
     name: mock
   - slug: style
     name: style
-  - slug: license
-    name: license
   - slug: mdx
     name: mdx
   - slug: markdown
     name: markdown
+  - slug: document-cv
+    name: document/cv
