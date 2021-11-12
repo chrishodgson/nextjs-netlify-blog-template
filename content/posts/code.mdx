@@ -18,15 +18,3 @@ author: wutali
   </body>
 </html>
 ```
-
-#### ts block with backticks
-
-```typescript
-export async function getMessagesFromQueue(queueUrl: string, numMessages: number, sqs?: SQS): Promise<Message[]> {
-  const sqsResource = sqs || initializeSQS();
-  // AWS receiveMessage API limited to 10 messages
-  const maxMessages = Math.min(numMessages, 10);
-  const receiveMessageResult: ReceiveMessageResult = await sqsResource.receiveMessage({ QueueUrl: queueUrl, MaxNumberOfMessages: maxMessages }).promise();
-  return receiveMessageResult.Messages || [];
-}
-```
