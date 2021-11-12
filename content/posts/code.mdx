@@ -3,5 +3,17 @@ slug: code
 title: code
 date: 2021-11-12
 author: wutali
+tags:
+  - markdown
 ---
-#### html block with backticks
+typescript
+
+```typescript
+export async function getMessagesFromQueue(queueUrl: string, numMessages: number, sqs?: SQS): Promise<Message[]> {
+  const sqsResource = sqs || initializeSQS();
+  // AWS receiveMessage API limited to 10 messages
+  const maxMessages = Math.min(numMessages, 10);
+  const receiveMessageResult: ReceiveMessageResult = await sqsResource.receiveMessage({ QueueUrl: queueUrl, MaxNumberOfMessages: maxMessages }).promise();
+  return receiveMessageResult.Messages || [];
+}
+```
